@@ -1,0 +1,23 @@
+const Ajv = require('ajv');
+const ajv = new Ajv();
+const customerSchema = require('./schemas/customerSchema.json'); // import schema từ file
+
+const validate = ajv.compile(customerSchema);
+
+const customerData = {
+    CustomerID: '22120230',
+    FullName: 'Phạm Tấn Nghĩa',
+    DOB: '2004-09-23',
+    Email: '22120230@student.hcmus.edu.vn',
+    Phone: '0392881328',
+    Password: 'Nghia@1234',
+};
+
+const valid = validate(customerData);
+
+if (!valid) {
+    console.log('Dữ liệu không hợp lệ:', validate.errors);
+} else {
+    console.log('Dữ liệu hợp lệ!');
+    // Lưu dữ liệu vào MongoDB
+}

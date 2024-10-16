@@ -1,0 +1,60 @@
+{
+    "$jsonSchema": {
+      "bsonType": "object",
+      "required": ["OrderID", "OrderDate", "StatusOrder", "CustomerID", "PaymentID", "TotalPrices", "Items"],
+      "properties": {
+        "OrderID": {
+          "bsonType": "string",
+          "description": "OrderID phải là chuỗi và bắt buộc"
+        },
+        "OrderDate": {
+          "bsonType": "date",
+          "description": "OrderDate phải là kiểu date và bắt buộc"
+        },
+        "StatusOrder": {
+          "bsonType": "string",
+          "enum": ["Pending", "Paid", "Cancelled"],
+          "description": "StatusOrder phải thuộc một trong các giá trị quy định"
+        },
+        "CustomerID": {
+          "bsonType": "string",
+          "description": "CustomerID phải là chuỗi và bắt buộc"
+        },
+        "PaymentID": {
+          "bsonType": "string",
+          "description": "PaymentID phải là chuỗi và bắt buộc"
+        },
+        "TotalPrices": {
+          "bsonType": "double",
+          "description": "TotalPrices phải là số và bắt buộc"
+        },
+        "Items": {
+          "bsonType": "array",
+          "items": {
+            "bsonType": "object",
+            "required": ["TicketID", "Quantity", "Price"],
+            "properties": {
+              "TicketID": {
+                "bsonType": "string",
+                "description": "TicketID phải là chuỗi và bắt buộc"
+              },
+              "Quantity": {
+                "bsonType": "int",
+                "description": "Quantity phải là số nguyên và bắt buộc"
+              },
+              "Price": {
+                "bsonType": "double",
+                "description": "Price phải là số và bắt buộc"
+              }
+            }
+          },
+          "description": "Items phải là một mảng chứa các vé và số lượng"
+        },
+        "VoucherID": {
+          "bsonType": "string",
+          "description": "VoucherID là chuỗi tùy chọn nếu có voucher"
+        }
+      }
+    }
+  }
+  

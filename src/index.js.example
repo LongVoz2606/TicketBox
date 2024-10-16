@@ -1,0 +1,28 @@
+const path = require('path');
+const express  = require('express')
+const morgan = require('morgan')
+const app = express()
+require('dotenv').config()
+
+const port = process.env.PORT || 8081
+
+
+//http logger
+app.use(morgan('combined'))
+
+// config static files
+app.use(express.static(path.join(__dirname, 'public')))
+
+// set engine -> use path __dirname
+app.set('views',path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
+
+
+app.get('/', (req, res) => {
+    res.render('index.ejs')
+})
+
+// lắng nghe thành công -> in ra console 
+// localhost - 127.0.0.1 
+app.listen(port, () => console.log('Example app listening at http://localhost:${port}'))
+// ctrl c -> disconnect server

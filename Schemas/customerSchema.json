@@ -1,0 +1,40 @@
+{
+    "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["CustomerID", "FullName", "DOB", "Email", "Phone", "Password"],
+        "properties": {
+            "CustomerID": {
+                "bsonType": "string",
+                "description": "CustomerID phải là chuỗi và bắt buộc"
+            },
+            "FullName": {
+                "bsonType": "string",
+                "description": "Tên khách hàng phải là chuỗi và bắt buộc"
+            },
+            "Gender": {
+                "enum": ["Male", "Female"],
+                "description": "Giới tính của khách hàng"
+            },
+            "DOB": {
+                "bsonType": "date",
+                "description": "Ngày sinh phải là kiểu ngày và bắt buộc"
+            },
+            "StartDate": {
+                "bsonType": "date",
+                "description": "Ngày bắt đầu phải là kiểu ngày"
+            },
+            "Email": {
+                "bsonType": "string",
+                "description": "Email phải là chuỗi và phải có định dạng hợp lệ"
+            },
+            "Phone": {
+                "bsonType": "string",
+                "description": "Số điện thoại phải là chuỗi và có định dạng hợp lệ"
+            },
+            "Password": {
+                "bsonType": "string",
+                "description": "Mật khẩu phải là chuỗi và bắt buộc"
+            }
+        }
+    }
+}

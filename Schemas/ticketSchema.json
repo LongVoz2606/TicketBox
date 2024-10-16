@@ -1,0 +1,32 @@
+{
+    "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["EventID", "TicketID", "Type", "Quantity", "Price", "Status"],
+        "properties": {
+            "EventID": {
+                "bsonType": "string",
+                "description": "EventID phải là chuỗi và bắt buộc"
+            },
+            "TicketID": {
+                "bsonType": "string",
+                "description": "TicketID phải là chuỗi và bắt buộc"
+            },
+            "Type": {
+                "bsonType": "string",
+                "description": "Loại vé phải là chuỗi và bắt buộc"
+            },
+            "Quantity": {
+                "bsonType": "number",
+                "description": "Số lượng vé phải là số và bắt buộc"
+            },
+            "Price": {
+                "bsonType": "number",
+                "description": "Giá vé phải là số và bắt buộc"
+            },
+            "Status": {
+                "enum": ["Available", "SoldOut"],
+                "description": "Trạng thái vé phải thuộc một trong các giá trị quy định"
+            }
+        }
+    }
+}
